@@ -8,7 +8,6 @@ body {
 }
 
 header {
-    background-color: rgb(202, 221, 200);
     width: 100%;
     height: 2rem;
     display: flex;
