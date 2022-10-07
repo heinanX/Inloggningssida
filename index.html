@@ -10,6 +10,64 @@
         <script src="script.js" defer></script>
     </head>
     <body>
-        
+        <header>
+            <div class="head--logo">
+                <img src="assets/logo-g32be3e749_640.png" alt="small--logo">
+                <span><b>NaturesTech</b></span>
+
+            </div>
+            <div class="head--loginfo">
+                <ul>
+                    <li><a id="login-link" href="index.html">Login</a></li>
+                    <li><a id="logOut-link" href="#" onclick="logOut()">Log out</a></li>
+                </ul>
+            </div>  
+        </header>
+
+                        <!-- Here starts main -->
+        <main>
+            <div id="login--box">
+                <div class="child">
+                    <img class="logo" src="assets/logo-g32be3e749_640.png" alt="logo">
+                    <h2>NaturesTech</h2>
+                </div>
+
+                        <!-- Login user -->
+
+                <form id="login--form">
+                    <span>Login:</span>
+                    <input id="uName" type="text">
+                    <span>Password:</span>
+                    <input id="uPassword" type="password">
+                    <button id="button" type="button" onclick="login()">Submit</button>
+                </form>
+                <p class="new--user">New user? <a class="txtolive" href="#" onclick="newUserForm()">Create an account.</a></p>
+            </div>
+
+                        <!-- Create a new user -->
+
+            <div id="new--user--box">
+                <div class="child">
+                    <img class="logo" src="assets/logo-g32be3e749_640.png" alt="logo">
+                    <h2>NaturesTech</h2>
+                </div>
+
+                <form id="new--user--form">
+                    <span>Create username:</span>
+                    <input id="newUName" type="text">
+                    <span>Create password:</span>
+                    <input id="newUPassword" type="password">
+                    <button type="button" onclick="newAccountBtn()">Submit</button>
+                </form>
+                <p class="new--user">Already have an account? <a href="#" onclick="loginForm()">Login</a></p>
+            </div>
+
+                        <!-- Logged in User -->
+
+            <div id="loggedIn">
+                <img class="rabbit" src="assets/logo-g32be3e749_640.png" alt="rabbit">
+                <h1 id="greeting"></h1>
+            </div>
+        </main>
     </body>
 </html>
