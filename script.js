@@ -1,5 +1,5 @@
 function init() {
-    if (localStorage.getItem("Active", JSON.stringify(userLoggedin))) {
+    if (localStorage.getItem("Active", userLoggedin)) {
         loginSuccess()
     }
 }
@@ -24,7 +24,9 @@ let users = [
 
 /*  --------local storage stuffs */
 
-localStorage.setItem("user", JSON.stringify(users))
+localStorage.setItem("User List", JSON.stringify(users))
+let storage = localStorage.getItem("User List")
+let getStorage = JSON.parse(storage)
 
 
 /* this gets the value from inside my input fields */
@@ -32,8 +34,8 @@ function login() {
     let username = document.getElementById("uName").value
     let password = document.getElementById("uPassword").value
 
-    for(i = 0; i < users.length; i++) {
-        if(username == users[i].username && users[i].password == password) {
+    for(i = 0; i < getStorage.length; i++) {
+        if(username == getStorage[i].username && getStorage[i].password == password) {
         /* console.log(username + " you're logged in") */
         loginSuccess()
         return
@@ -53,7 +55,6 @@ function loginSuccess() {
 }
 
 /* ---------------> show greeting */
-init()
 
 /* ----------------- toggle between create account & Login form*/
 
@@ -85,7 +86,7 @@ function newAccountBtn() {
         }
     } */
     users.push(createUser)
-    localStorage.setItem("NewUser", JSON.stringify(createUser))
+    localStorage.setItem("User List", JSON.stringify(users))
 }
 
 /* ---------------- log out */
